@@ -2,11 +2,28 @@
 
 namespace AppGoodFood
 {
+    public enum Opcao
+    {
+        Chickpeas = 1,
+        Quinoa = 2,
+        Lentilha = 3,
+        BatataQv = 4,
+        BatataP = 5,
+        Combo1 = 6,
+        Combo2 = 7,
+        Combo3 = 8,
+        Combo4 = 9,
+        Combo5 = 10,
+        Combo6 = 11,
+        Mussarela = 12,
+        Margherita = 13
+    }
+    
     class Program
     {
         static void Main(string[] args)
         {
-            string opcao;
+            Opcao opcao;
 
             Console.WriteLine(" Bem vindo ao restaurante comunitário: The Good Food! \n");
             Console.WriteLine(" Menu \n");
@@ -31,56 +48,57 @@ namespace AppGoodFood
 
             {
                 Console.Write(" Digite o número do seu pedido: ");
-                opcao = (Console.ReadLine());
-                while (opcao != "0")
+                Console.ReadLine();
+                
+                for (Opcao i = Opcao.Chickpeas; i < Opcao.Margherita; i++)
                 {
-                    switch (opcao)
+                    switch (i)
                     {
-                        case "1":
+                        case Opcao.Chickpeas:
                             Console.WriteLine(" Você escolheu burger de grão de bico!");
 
                             break;
 
-                        case "2":
+                        case Opcao.Quinoa:
                             Console.WriteLine(" Você escolheu burger de quinoa!");
                             break;
 
-                        case "3":
+                        case Opcao.Lentilha:
                             Console.WriteLine(" Você escolheu burger de lentilha!");
                             break;
 
-                        case "4":
+                        case Opcao.BatataQv:
                             Console.WriteLine(" Você escolheu batata frita rústica com queijo vegetal!");
                             break;
 
-                        case "5":
+                        case Opcao.BatataP:
                             Console.WriteLine(" Você escolheu batata frita rústica com páprica!");
                             break;
 
-                        case "6":
+                        case Opcao.Combo1:
                             Console.WriteLine(" Você escolheu burger de grão de bico + batata rústica com queijo vegetal!");
                             break;
 
-                        case "7":
+                        case Opcao.Combo2:
                             Console.WriteLine(" Você escolheu burger de grão de bico + batata rústica com páprica!");
                             break;
 
-                        case "8":
+                        case Opcao.Combo3:
                             Console.WriteLine(" Você escolheu burger de quinoa + batata rústica com queijo vegetal!");
                             break;
-                        case "9":
+                        case Opcao.Combo4:
                             Console.WriteLine(" Você escolheu burger de quinoa + batata rústica com páprica!");
                             break;
-                        case "10":
+                        case Opcao.Combo5:
                             Console.WriteLine(" Você escolheu burger de lentilha + batata rústica com queijo vegetal!");
                             break;
-                        case "11":
+                        case Opcao.Combo6:
                             Console.WriteLine(" Você escolheu burger de lentilha + batata rústica com páprica!");
                             break;
-                        case "12":
+                        case Opcao.Mussarela:
                             Console.WriteLine(" Você escolheu uma pizza de mussarela!");
                             break;
-                        case "13":
+                        case Opcao.Margherita:
                             Console.WriteLine(" Você escolheu uma pizza de margherita!");
                             break;
 
@@ -91,7 +109,7 @@ namespace AppGoodFood
 
                     Console.WriteLine("\n Algo mais? ");
                     Console.WriteLine("Selecione mais um lanche ou digite 0 para sair");
-                    opcao = (Console.ReadLine());
+                    Console.ReadLine();
                 }
 
                 Console.WriteLine("Sua refeição paga outra refeição. Obrigado!");
