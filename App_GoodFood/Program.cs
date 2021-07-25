@@ -51,23 +51,28 @@ namespace AppGoodFood
             }
 
            Console.WriteLine(" Digite o número de seu pedido");
-            
-           int OpcaoInput = int.Parse(Console.ReadLine());
-           Console.WriteLine("Você escolheu " + ((Opcao)OpcaoInput).ToString() + "!");
 
-             if (OpcaoInput > 13)
-             {
-                Console.WriteLine("Opção inválida! Por gentileza, reiniciar o aplicativo.");
-                Environment.Exit(0);
+            while (true)
+            {
+                int OpcaoInput = int.Parse(Console.ReadLine());
+                Console.WriteLine(" Você escolheu " + ((Opcao)OpcaoInput).ToString() + "!");
                 
-             }
+                Console.WriteLine("\n Algo mais? Entre com um novo pedido ou aperte 0 para sair.\n");
+                
+                if(OpcaoInput == 0)
+                {
+                    Console.WriteLine("\nSUA REFEIÇÃO PAGA OUTRA REFEIÇÃO. OBRIGADO E VOLTE SEMPRE!\n");
+                    Environment.Exit(0);
+                }
 
-            Console.WriteLine("\nSua refeição paga outra refeição. Obrigado!\n");
-            Console.WriteLine("Por sermos um restaurante comunitário servimos apenas um pedido por cliente");
-            Console.ReadKey();
+                if (OpcaoInput > 13)
+                {
+                    Console.WriteLine(" Opção inválida! Escolha o número do pedido de acordo com nosso cadárpio.");
+            
+                }
+                
+            }
 
-
-           
         }
     }
 }
